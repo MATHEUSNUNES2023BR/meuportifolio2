@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Serviços",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "MATHEUS BARROS",
+    "subtitle": "TI",
+    "description": "Profissional de TI especializado em desenvolvimento web e soluções digitais personalizadas",
+    "cta": "Conheça meus serviços"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "description": "Com experiência em desenvolvimento web e soluções digitais, ofereço serviços personalizados e de alta qualidade para empresas e profissionais que buscam uma presença digital impactante."
+  },
+  "services": {
+    "title": "Meus serviços",
+    "webDev": "Desenvolvimento Web",
+    "webDevDesc": "Criação de websites responsivos e aplicações web utilizando as tecnologias mais modernas do mercado.",
+    "mobileDev": "Desenvolvimento Mobile",
+    "mobileDevDesc": "Aplicativos nativos e híbridos para iOS e Android, com foco em usabilidade e performance.",
+    "design": "Design UI/UX",
+    "designDesc": "Interfaces intuitivas e atraentes que proporcionam a melhor experiência para seus usuários."
+  },
+  "projects": {
+    "title": "Projetos recentes",
+    "viewMore": "Ver mais"
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Mensagem",
+    "send": "Enviar"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "MATHEUS BARROS",
+    "subtitle": "IT",
+    "description": "IT Professional specialized in web development and custom digital solutions",
+    "cta": "Discover my services"
+  },
+  "about": {
+    "title": "About me",
+    "description": "With experience in web development and digital solutions, I offer personalized and high-quality services for businesses and professionals looking for an impactful digital presence."
+  },
+  "services": {
+    "title": "My services",
+    "webDev": "Web Development",
+    "webDevDesc": "Creation of responsive websites and web applications using the most modern technologies in the market.",
+    "mobileDev": "Mobile Development",
+    "mobileDevDesc": "Native and hybrid applications for iOS and Android, focusing on usability and performance.",
+    "design": "UI/UX Design",
+    "designDesc": "Intuitive and attractive interfaces that provide the best experience for your users."
+  },
+  "projects": {
+    "title": "Recent projects",
+    "viewMore": "View more"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  }
+}
