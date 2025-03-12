@@ -4,6 +4,7 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'small' | 'medium' | 'large';
   children: React.ReactNode;
+  type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
 }
 
@@ -62,11 +63,12 @@ const StyledButton = styled.button<ButtonProps>`
 const Button: React.FC<ButtonProps> = ({ 
   variant = 'primary', 
   size = 'medium', 
-  children, 
+  children,
+  type = 'button', 
   onClick 
 }) => {
   return (
-    <StyledButton variant={variant} size={size} onClick={onClick}>
+    <StyledButton type={type} variant={variant} size={size} onClick={onClick}>
       {children}
     </StyledButton>
   );

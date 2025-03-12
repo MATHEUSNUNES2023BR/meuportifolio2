@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import logo from '../../assets/images/logo.png'
 interface LogoProps {
   size?: 'small' | 'medium' | 'large';
 }
@@ -19,29 +19,16 @@ const LogoWrapper = styled(Link)<LogoProps>`
   text-decoration: none;
   display: flex;
   align-items: center;
-`;
-
-const LogoCircle = styled.div`
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 2px solid ${props => props.theme.colors.primary};
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  &:before {
-    content: 'MB';
-    font-family: ${props => props.theme.fonts.secondary};
-    font-weight: 700;
-    color: ${props => props.theme.colors.primary};
+  .logo{
+    width: 60px;
   }
 `;
+
 
 const Logo: React.FC<LogoProps> = ({ size = 'medium' }) => {
   return (
     <LogoWrapper to="/" size={size}>
-      <LogoCircle />
+      <img className='logo' src={logo} alt='Minha Logo'/>
     </LogoWrapper>
   );
 };
