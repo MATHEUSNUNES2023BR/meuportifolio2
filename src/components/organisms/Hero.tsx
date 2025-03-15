@@ -9,30 +9,6 @@ const HeroSection = styled.section`
   align-items: center;
   position: relative;
   overflow: hidden;
-  
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -5rem;
-    right: -5rem;
-    width: 30rem;
-    height: 30rem;
-    background: linear-gradient(135deg, rgba(252, 228, 132, 0.1) 0%, rgba(252, 228, 132, 0.05) 100%);
-    border-radius: 50%;
-    z-index: -1;
-  }
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: -5rem;
-    left: -5rem;
-    width: 20rem;
-    height: 20rem;
-    background: linear-gradient(135deg, rgba(252, 228, 132, 0.1) 0%, rgba(252, 228, 132, 0.05) 100%);
-    border-radius: 50%;
-    z-index: -1;
-  }
 `;
 
 const HeroContent = styled.div`
@@ -42,8 +18,9 @@ const HeroContent = styled.div`
 const HeroTitle = styled.h1`
   font-size: 4rem;
   font-weight: 800;
-  color: ${props => props.theme.colors.primary};
+  margin-top: 5rem;
   margin-bottom: 0.5rem;
+  color: ${props => props.theme.colors.primary};
   position: relative;
   
   &:after {
@@ -115,32 +92,6 @@ const CardPattern = styled.div`
   z-index: -1;
 `;
 
-const MonogramLogo = styled.div`
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 15rem;
-  height: 15rem;
-  border: 3px solid ${props => props.theme.colors.primary};
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.7;
-  
-  &:before {
-    content: 'MB';
-    font-family: ${props => props.theme.fonts.secondary};
-    font-size: 5rem;
-    font-weight: 700;
-    color: ${props => props.theme.colors.primary};
-  }
-  
-  @media (max-width: ${props => props.theme.breakpoints.desktop}) {
-    display: none;
-  }
-`;
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -171,7 +122,6 @@ const Hero: React.FC = () => {
         </HeroContent>
       </Container>
       <CardPattern />
-      <MonogramLogo />
     </HeroSection>
   );
 };

@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import Logo from '../atoms/Logo';
 import NavItem from '../molecules/NavItem';
 import Container from '../atoms/Container';
-
+import brasil from '../../assets/flags/icons8-brazil-96.png';
+import espanha from '../../assets/flags/icons8-spain-96.png';
+import usa from '../../assets/flags/icons8-usa-96.png';
 const HeaderWrapper = styled.header`
   padding: 1.5rem 0;
   position: fixed;
@@ -105,10 +107,86 @@ const Overlay = styled.div<{ isOpen: boolean }>`
   z-index: 150;
 `;
 
+// Componentes novos para seleção de idioma
+const LanguageSelector = styled.div`
+  position: relative;
+  margin-left: 1.5rem;
+`;
+
+const LanguageButton = styled.button`
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: ${props => props.theme.colors.primary};
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+`;
+
+const LanguageDropdown = styled.div<{ isOpen: boolean }>`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: ${props => props.theme.colors.background};
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  display: ${props => props.isOpen ? 'flex' : 'none'};
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 110;
+  min-width: 120px;
+`;
+
+const LanguageOption = styled.button`
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: ${props => props.theme.colors.text};
+  font-size: 0.875rem;
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+`;
+
+const FlagImage = styled.img`
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+`;
+
+const LanguageLabel = styled.span`
+  margin-left: 0.5rem;
+`;
+
+const MobileLanguageOptions = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+`;
+
 const Header: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,21 +201,68 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.language-selector')) {
+        setIsLanguageDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setIsLanguageDropdownOpen(false);
+  };
+
+  // Mapeamento de idiomas com suas respectivas bandeiras
+  const languages = [
+    { code: 'pt-BR', flag: brasil, label: 'BR' },
+    { code: 'es', flag: espanha, label: 'ES' },
+    { code: 'en', flag: usa, label: 'US' }
+  ];
+
+  // Encontra o idioma atual
+  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+
   return (
     <>
       <HeaderWrapper className={isScrolled ? 'scrolled' : ''}>
         <Container>
           <HeaderContent>
             <Logo />
-            <Nav>
-              <NavItem to="/" label={t('nav.home')} />
-              <NavItem to="/services" label={t('nav.services')} />
-              <NavItem to="/projects" label={t('nav.projects')} />
-              <NavItem to="/contact" label={t('nav.contact')} />
-            </Nav>
-            <MobileMenuButton onClick={() => setIsMobileMenuOpen(true)}>
-              <i className="fas fa-bars"></i>
-            </MobileMenuButton>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Nav>
+                <NavItem to="/" label={t('nav.home')} />
+                <NavItem to="/services" label={t('nav.services')} />
+                <NavItem to="/projects" label={t('nav.projects')} />
+                <NavItem to="/contact" label={t('nav.contact')} />
+              </Nav>
+              
+              {/* Seletor de idioma */}
+              <LanguageSelector className="language-selector">
+                <LanguageButton onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}>
+                  <FlagImage src={currentLanguage.flag} alt={currentLanguage.code} />
+                  <LanguageLabel>{currentLanguage.label}</LanguageLabel>
+                  <i className={`fas fa-chevron-${isLanguageDropdownOpen ? 'up' : 'down'}`} style={{ fontSize: '0.75rem' }}></i>
+                </LanguageButton>
+                <LanguageDropdown isOpen={isLanguageDropdownOpen}>
+                  {languages.map(lang => (
+                    <LanguageOption key={lang.code} onClick={() => changeLanguage(lang.code)}>
+                      <FlagImage src={lang.flag} alt={lang.code} />
+                      <LanguageLabel>{lang.label}</LanguageLabel>
+                    </LanguageOption>
+                  ))}
+                </LanguageDropdown>
+              </LanguageSelector>
+              
+              <MobileMenuButton onClick={() => setIsMobileMenuOpen(true)}>
+                <i className="fas fa-bars"></i>
+              </MobileMenuButton>
+            </div>
           </HeaderContent>
         </Container>
       </HeaderWrapper>
@@ -156,10 +281,20 @@ const Header: React.FC = () => {
           <NavItem to="/services" label={t('nav.services')} />
           <NavItem to="/projects" label={t('nav.projects')} />
           <NavItem to="/contact" label={t('nav.contact')} />
+          
+          {/* Opções de idioma no menu mobile */}
+          <MobileLanguageOptions>
+            {languages.map(lang => (
+              <LanguageOption key={lang.code} onClick={() => changeLanguage(lang.code)}>
+                <FlagImage src={lang.flag} alt={lang.code} />
+                <LanguageLabel>{lang.label}</LanguageLabel>
+              </LanguageOption>
+            ))}
+          </MobileLanguageOptions>
         </MobileNav>
       </MobileMenu>
     </>
   );
 };
 
-export default Header;
+export default Header;  

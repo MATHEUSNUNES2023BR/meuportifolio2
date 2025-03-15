@@ -18,10 +18,10 @@ const SocialLink = styled.a`
 const SocialLinks: React.FC = () => {
   return (
     <SocialLinksContainer>
-      <SocialLink href="https://github.com/matheusbarros" target="_blank" rel="noopener noreferrer">
+      <SocialLink href="https://github.com/MATHEUSNUNES2023BR" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-github"></i>
       </SocialLink>
-      <SocialLink href="https://linkedin.com/in/matheusbarros" target="_blank" rel="noopener noreferrer">
+      <SocialLink href="https://www.linkedin.com/in/matheusnunesdebarros/" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-linkedin"></i>
       </SocialLink>
       <SocialLink href="mailto:matheustiservicos@gmail.com">

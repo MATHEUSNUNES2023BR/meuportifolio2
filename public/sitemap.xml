@@ -1,0 +1,29 @@
+<!-- sitemap.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.matheusbarrosti.com/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.matheusbarrosti.com/</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.matheusbarrosti.com/services</loc>
+    <lastmod>2025-03-10</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.matheusbarrosti.com/projects</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.matheusbarrosti.com/contact</loc>
+    <lastmod>2025-02-28</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Adicione todas as URLs do seu site aqui -->
+</urlset>

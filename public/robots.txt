@@ -1,0 +1,12 @@
+<!-- robots.txt -->
+User-agent: *
+Allow: /
+
+# Diretórios e arquivos para não indexar
+Disallow: /admin/
+Disallow: /privado/
+Disallow: /temp/
+Disallow: /*.pdf$
+
+# Localização do sitemap
+Sitemap: https://www.matheusbarrosti.com/sitemap.xml

@@ -13,24 +13,122 @@
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Con experiencia en desarrollo web y soluciones digitales, ofrezco servicios personalizados y de alta calidad para empresas y profesionales que buscan una presencia digital impactante."
+    "description": "Con experiencia en desarrollo web, soporte técnico y soluciones digitales, ofrezco servicios personalizados y de alta calidad para empresas y profesionales que buscan una presencia digital impactante.",    "expertise": "Años de Experiencia en el Mercado",
+    "projects": "Proyectos Exitosos Entregados con Excelencia",
+    "client": "Clientes Satisfechos con Resultados Concretos"
   },
   "services": {
-    "title": "Mis servicios",
-    "webDev": "Desarrollo Web",
-    "webDevDesc": "Creación de sitios web y aplicaciones web responsivas utilizando las tecnologías más modernas del mercado.",
-    "mobileDev": "Desarrollo Móvil",
-    "mobileDevDesc": "Aplicaciones nativas e híbridas para iOS y Android, enfocadas en usabilidad y rendimiento.",
-    "design": "Diseño UI/UX",
-    "designDesc": "Interfaces intuitivas y atractivas que brindan la mejor experiencia a tus usuarios."
+      "title": "Servicios Disponibles",
+      "suporte": {
+        "title": "Soporte Técnico",
+        "description": "Servicios especializados en mantenimiento de computadoras, incluyendo diagnóstico, optimización, formateo e instalación de software. Abarca reemplazo de componentes, limpieza, eliminación de malware y recuperación de datos. Atención profesional y personalizada para garantizar alto rendimiento y confiabilidad de los dispositivos."
+      },
+      "web": {
+        "title": "Desarrollo Web",
+        "description": "Creación de sitios web y aplicaciones modernas, responsivas y optimizadas para ofrecer la mejor experiencia a sus usuarios. Desarrollo con las tecnologías más avanzadas del mercado."
+      },
+      "automacao": {
+        "title": "Automatización de Tareas",
+        "description": "Desarrollo de scripts y sistemas para automatizar procesos repetitivos, aumentando la productividad y reduciendo errores. Soluciones inteligentes que ahorran tiempo y recursos para su negocio."
+      },
+      "seo": {
+        "title": "SEO",
+        "description": "Optimización de sitios web para motores de búsqueda, mejorando el posicionamiento y la visibilidad de su marca en Internet. Estrategias eficientes para atraer más visitantes cualificados a su sitio."
+      },
+      "design": {
+        "title": "Diseño",
+        "description": "Creación de interfaces intuitivas y atractivas, identidad visual y materiales gráficos que comunican la esencia de su marca. Diseño moderno y funcional que encanta a sus clientes."
+      },
+      "text":{
+        "description": "Desarrollo web, soporte técnico y soluciones digitales personalizadas para empresas y profesionales que buscan una presencia digital impactante e innovadora."
+      }
+  }, 
+  "footer": {
+      "l": "Enlaces Rápidos",
+      "s": "Servicios",
+      "c": "Contacto",
+      "description": "Desarrollo web, soporte técnico y soluciones digitales personalizadas para empresas y profesionales que buscan una presencia digital impactante e innovadora.",
+      "right": "Matheus Barros. Todos los derechos reservados."
   },
   "projects": {
-    "title": "Proyectos recientes",
-    "viewMore": "Ver más"
+      "card": {
+        "h2": "Características principales:",
+        "projetos": "Proyectos",
+        "galeria": "Galería",
+        "verprojeto": "Ver Proyecto",
+        "detalhes": "Detalles"
+      },
+      "dbo": {
+        "title": "Dragon Ball Online - Knightz",
+        "description": "Este sitio web fue desarrollado para brindar a los jugadores del MMORPG Dragon Ball Online una plataforma completa e interactiva para administrar sus cuentas, explorar información del juego y acceder a recursos exclusivos.",
+        "longDescription": [
+          "Página de inicio con video interactivo de las clases",
+          "Tablas de clasificación de jugadores y donantes",
+          "Sistema completo de registro e inicio de sesión",
+          "Panel de usuario con gestión de personajes",
+          "Sistema de pago a través de PIX",
+          "Sistema de pago a través de TARJETA DE DÉBITO Y CRÉDITO",
+          "Calculadora de habilidades para simulación de builds",
+          "Página de clasificaciones y torneos Budokai",
+          "Responsividad"
+        ],
+        "tech": ["React", "TypeScript", "Styled Components", "Django", "Python"],
+        "features": [
+          "Gestión de cuentas",
+          "Sistema de clasificación",
+          "Panel administrativo",
+          "Integración con PIX",
+          "Integración con Tarjeta de Débito y Crédito",
+          "Personalización de personajes"
+        ]
+      },
+      "sollie": {
+        "title": "Sollie Professional - Wix",
+        "description": "Sitio web profesional desarrollado con Wix Studio, ofreciendo una experiencia sofisticada y responsiva en diferentes dispositivos.",
+        "longDescription": [
+          "Diseño Moderno y Minimalista",
+          "Navegación Intuitiva",
+          "Responsividad",
+          "Contenido Multimedia",
+          "Llamada a la Acción (CTA) Estratégica",
+          "Integración con Redes Sociales",
+          "Formularios de Contacto",
+          "SEO Optimizado"
+        ],
+        "tech": ["Wix Studio", "CMS", "Diseño Responsivo"],
+        "features": [
+          "Productos dinámicos vía CMS",
+          "Diseño responsivo",
+          "Interfaz moderna",
+          "Gestión de contenido",
+          "Compatibilidad con múltiples dispositivos"
+        ]
+      },
+      "stakehouse": {
+        "title": "StakeHouse",
+        "description": "Página moderna e impactante para una parrilla, destacando el ambiente, el menú y la propuesta gastronómica.",
+        "longDescription": [
+          "Diseño Responsivo y Moderno",
+          "Navegación Intuitiva",
+          "Formulario de Contacto",
+          "Galería de Imágenes",
+          "Tipografía y Colores Bien Definidos"
+        ],
+        "tech": ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+        "features": [
+          "Diseño responsivo",
+          "Navegación intuitiva",
+          "Menú digital",
+          "Interfaz moderna",
+          "Optimización móvil"
+        ]
+      }
   },
   "contact": {
     "title": "Contáctame",
+    "description": "¿Está buscando un socio confiable para la prestación de servicios? Complete el formulario al lado y me pondré en contacto para discutir cómo puedo ayudar a su empresa.",
     "name": "Nombre",
+    "phone": "Teléfono",
     "email": "Correo electrónico",
     "message": "Mensaje",
     "send": "Enviar"

@@ -2,9 +2,12 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import Container from '../atoms/Container';
 import Button from '../atoms/Button';
+import { useState } from 'react';
+import emailjs from '@emailjs/browser'
 
 const ContactSectionWrapper = styled.section`
   padding: 6rem 0;
+  padding-top: 8rem;
   background-color: rgba(252, 228, 132, 0.03);
 `;
 
@@ -124,7 +127,35 @@ const FormTextarea = styled.textarea`
 
 const ContactSection: React.FC = () => {
   const { t } = useTranslation();
-  
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  function sendEmail(e: React.MouseEvent<HTMLButtonElement>){
+    e.preventDefault()
+    if(name === '' || email === '' || phone === '' || message === ''){
+      alert('Preencha os campos obrigatórios')
+      return
+    }
+    const templateParams = {
+      from_name: name,
+      phone: phone,
+      message: message,
+      email: email
+    }
+    emailjs.send("service_lvqy18s", "template_q8rhh3t", templateParams, "w6BYmIRwZjyISu7n6")
+    .then((res)=>{
+      if(res.status === 200){
+        alert('E-mail enviado com sucesso!')
+        setName('')
+        setPhone('')
+        setEmail('')
+        setMessage('')
+      }
+    }, ()=>{
+      alert('Falha ao enviar E-mail, tente novamente')
+    })
+  }
   return (
     <ContactSectionWrapper>
       <Container>
@@ -132,7 +163,7 @@ const ContactSection: React.FC = () => {
           <ContactInfo>
             <SectionTitle>{t('contact.title')}</SectionTitle>
             <ContactDescription>
-              Está interessado em trabalhar juntos? Preencha o formulário ao lado e entrarei em contato o mais breve possível.
+            {t('contact.description')}
             </ContactDescription>
             <ContactDetails>
               <ContactItem>
@@ -158,20 +189,24 @@ const ContactSection: React.FC = () => {
           <ContactForm>
             <FormGroup>
               <FormLabel>{t('contact.name')}</FormLabel>
-              <FormInput type="text" placeholder="John Doe" />
+              <FormInput onChange={ (e) => setName(e.target.value) } type="text" placeholder="John Doe" />
+            </FormGroup>
+            <FormGroup>
+              <FormLabel>{t('contact.phone')}</FormLabel>
+              <FormInput onChange={ (e) => setPhone(e.target.value) } type="text" placeholder="+55 62 9 9999-9999" />
             </FormGroup>
             <FormGroup>
               <FormLabel>{t('contact.email')}</FormLabel>
-              <FormInput type="email" placeholder="john@example.com" />
+              <FormInput onChange={ (e) => setEmail(e.target.value) } type="email" placeholder="john@example.com" />
             </FormGroup>
             <FormGroup>
               <FormLabel>{t('contact.message')}</FormLabel>
-              <FormTextarea placeholder="Como posso ajudar você?" />
+              <FormTextarea onChange={ (e) => setMessage(e.target.value)}  placeholder="Como posso ajudar você?" />
             </FormGroup>
-            <Button type="submit" size="large">{t('contact.send')}</Button>
+            <Button onClick={() => sendEmail(event as unknown as React.MouseEvent<HTMLButtonElement>)} type="submit" size="large">{t('contact.send')}</Button>
           </ContactForm>  
         </ContactGrid>
-      </Container>
+      </Container>  
     </ContactSectionWrapper>
   );
 };

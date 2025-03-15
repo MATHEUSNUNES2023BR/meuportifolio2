@@ -13,24 +13,123 @@
   },
   "about": {
     "title": "About me",
-    "description": "With experience in web development and digital solutions, I offer personalized and high-quality services for businesses and professionals looking for an impactful digital presence."
+    "description": "With experience in web development, technical support, and digital solutions, I offer personalized and high-quality services for businesses and professionals seeking an impactful digital presence.",
+    "expertise": "Years of Expertise in the Market",
+    "projects": "Successful Projects Delivered with Excellence",
+    "client": "Satisfied Clients with Tangible Results"
   },
   "services": {
-    "title": "My services",
-    "webDev": "Web Development",
-    "webDevDesc": "Creation of responsive websites and web applications using the most modern technologies in the market.",
-    "mobileDev": "Mobile Development",
-    "mobileDevDesc": "Native and hybrid applications for iOS and Android, focusing on usability and performance.",
-    "design": "UI/UX Design",
-    "designDesc": "Intuitive and attractive interfaces that provide the best experience for your users."
+      "title": "Available Services",
+      "suporte": {
+        "title": "Technical Support",
+        "description": "Specialized computer maintenance services, including diagnostics, optimization, formatting, and software installation. Covers component replacement, cleaning, malware removal, and data recovery. Professional and personalized service to ensure high performance and reliability of devices."
+      },
+      "web": {
+        "title": "Web Development",
+        "description": "Creation of modern, responsive, and optimized websites and web applications to provide the best user experience. Development using the latest market technologies."
+      },
+      "automacao": {
+        "title": "Task Automation",
+        "description": "Development of scripts and systems to automate repetitive processes, increasing productivity and reducing errors. Smart solutions that save time and resources for your business."
+      },
+      "seo": {
+        "title": "SEO",
+        "description": "Website optimization for search engines, improving your brand’s ranking and visibility online. Effective strategies to attract more qualified visitors to your site."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Creation of intuitive and visually appealing interfaces, brand identity, and graphic materials that communicate your brand’s essence. Modern and functional design that captivates your customers."
+      },
+      "text":{
+        "description": "Web development, technical support, and customized digital solutions for businesses and professionals seeking an impactful and innovative digital presence."
+      }
+  },
+  "footer": {
+      "l": "Quick Links",
+      "s": "Services",
+      "c": "Contact",
+      "description": "Web development, technical support, and custom digital solutions for businesses and professionals seeking an impactful and innovative digital presence.",
+      "right": "Matheus Barros. All rights reserved."
   },
   "projects": {
-    "title": "Recent projects",
-    "viewMore": "View more"
+      "card": {
+        "h2": "Main Features",
+        "projetos": "Projects",
+        "galeria": "Gallery",
+        "verprojeto": "View Project",
+        "detalhes": "Details:"
+      },
+      "dbo": {
+        "title": "Dragon Ball Online - Knightz",
+        "description": "This website was developed to provide MMORPG Dragon Ball Online players with a complete and interactive platform to manage their accounts, explore game information, and access exclusive resources.",
+        "longDescription":[
+          "Home Page with interactive video of the classes",
+          "Ranking tables for players and donors",
+          "Complete Registration and Login system",
+          "User Panel with character management",
+          "Payment system via PIX",
+          "Payment system via DEBIT AND CREDIT CARD",
+          "Skill Calculator for build simulations",
+          "Rankings and Budokai tournament page",
+          "Responsiveness"
+        ],
+        "tech": ["React", "TypeScript", "Styled Components", "Django", "Python"],
+        "features": [
+          "Account management",
+          "Ranking system",
+          "Admin panel",
+          "PIX integration",
+          "Debit and Credit Card integration",
+          "Character customization"
+        ]
+      },
+      "sollie": {
+        "title": "Sollie Professional - Wix",
+        "description": "Professional website developed with Wix Studio, offering a sophisticated and responsive experience across different devices.",
+        "longDescription": [
+          "Modern and Minimalist Design",
+          "Intuitive Navigation",
+          "Responsiveness",
+          "Multimedia Content",
+          "Strategic Call-to-Action (CTA)",
+          "Social Media Integration",
+          "Contact Forms",
+          "Optimized SEO"
+        ],
+        "tech": ["Wix Studio", "CMS", "Responsive Design"],
+        "features": [
+          "Dynamic products via CMS",
+          "Responsive design",
+          "Modern interface",
+          "Content management",
+          "Multi-device compatibility"
+        ]
+      },
+      "stakehouse": {
+        "title": "StakeHouse",
+        "description": "A modern and visually striking page for a steakhouse, highlighting ambiance, menu, and gastronomic concept.",
+        "longDescription":[
+          "Responsive and Modern Design",
+          "Intuitive Navigation",
+          "Contact Form",
+          "Image Gallery",
+          "Well Defined Typography and Colors"
+        ],
+        "tech": ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+        "features": [
+          "Responsive design",
+          "Intuitive navigation",
+          "Digital menu",
+          "Modern interface",
+          "Mobile optimization"
+        ]
+      }
   },
   "contact": {
     "title": "Get in touch",
+    "description": "Are you looking for a reliable partner for service provision? Fill out the form beside, and I will get in touch to discuss how I can help your company.",
     "name": "Name",
+    "phone": "Phone",
     "email": "Email",
     "message": "Message",
     "send": "Send"

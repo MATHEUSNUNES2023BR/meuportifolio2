@@ -20,12 +20,18 @@ const FooterContent = styled.div`
   
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
   }
 `;
 
 const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    align-items: center;
+  }
 `;
 
 const FooterLogo = styled.div`
@@ -38,6 +44,12 @@ const FooterAbout = styled.p`
   margin-bottom: 2rem;
   color: ${props => props.theme.colors.light};
   opacity: 0.7;
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const FooterTitle = styled.h4`
@@ -56,6 +68,13 @@ const FooterTitle = styled.h4`
     height: 2px;
     background-color: ${props => props.theme.colors.primary};
   }
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    &:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 `;
 
 const FooterLinks = styled.ul`
@@ -65,6 +84,10 @@ const FooterLinks = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    align-items: center;
+  }
 `;
 
 const FooterLink = styled.li`
@@ -115,13 +138,13 @@ const Footer: React.FC = () => {
               <Logo size="small" />
             </FooterLogo>
             <FooterAbout>
-              Desenvolvimento web, design UI/UX e soluções digitais personalizadas para empresas e profissionais que buscam uma presença digital impactante.
+              {t('footer.description')}
             </FooterAbout>
             <SocialLinks />
           </FooterColumn>
           
           <FooterColumn>
-            <FooterTitle>Links Rápidos</FooterTitle>
+            <FooterTitle>{t('footer.l')}</FooterTitle>
             <FooterLinks>
               <FooterLink><a href="/">{t('nav.home')}</a></FooterLink>
               <FooterLink><a href="/services">{t('nav.services')}</a></FooterLink>
@@ -131,18 +154,18 @@ const Footer: React.FC = () => {
           </FooterColumn>
           
           <FooterColumn>
-            <FooterTitle>Serviços</FooterTitle>
+            <FooterTitle>{t('footer.s')}</FooterTitle>
             <FooterLinks>
-              <FooterLink><a href="/services">Web Development</a></FooterLink>
-              <FooterLink><a href="/services">UI/UX Design</a></FooterLink>
-              <FooterLink><a href="/services">Mobile Development</a></FooterLink>
-              <FooterLink><a href="/services">DevOps</a></FooterLink>
-              <FooterLink><a href="/services">Database</a></FooterLink>
+              <FooterLink><a href="/services">{t('services.web.title')}</a></FooterLink>
+              <FooterLink><a href="/services">{t('services.suporte.title')}</a></FooterLink>
+              <FooterLink><a href="/services">{t('services.design.title')}</a></FooterLink>
+              <FooterLink><a href="/services">{t('services.seo.title')}</a></FooterLink>
+              <FooterLink><a href="/services">{t('services.automacao.title')}</a></FooterLink>
             </FooterLinks>
           </FooterColumn>
           
           <FooterColumn>
-            <FooterTitle>Contato</FooterTitle>
+            <FooterTitle>{t('footer.c')}</FooterTitle>
             <FooterLinks>
               <FooterLink>
                 <a href="tel:+5562991166071">
@@ -164,7 +187,7 @@ const Footer: React.FC = () => {
         </FooterContent>
         
         <FooterBottom>
-          <Copyright>&copy; {currentYear} Matheus Barros. Todos os direitos reservados.</Copyright>
+          <Copyright>&copy; {t('footer.right')} </Copyright>
         </FooterBottom>
       </Container>
     </FooterWrapper>
