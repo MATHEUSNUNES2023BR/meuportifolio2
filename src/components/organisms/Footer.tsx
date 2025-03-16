@@ -127,8 +127,6 @@ const Copyright = styled.p`
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
-  
   return (
     <FooterWrapper>
       <Container>
