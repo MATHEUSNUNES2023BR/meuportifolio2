@@ -1,6 +1,5 @@
-// 3. Crie um componente SEO reutilizável (SEO.tsx)
 import { Helmet } from 'react-helmet-async'
-import logo from './assets/images/logo.png'
+import favicon from './assets/images/favicon.ico'
 interface SEOProps {
   title: string;
   description: string;
@@ -11,19 +10,20 @@ interface SEOProps {
   canonicalUrl?: string;
   keywords?: string;
 }
-
+const defaultImage = 'https://www.matheusbarrosti.com/logo.png'
 export const SEO = ({
   title,
   description,
   name = 'Matheus Barros',
   type = 'website',
   url = window.location.href,
-  image = logo,
+  image = defaultImage,
   canonicalUrl = window.location.href,
   keywords = 'palavra-chave1, palavra-chave2',
 }: SEOProps) => {
   return (
     <Helmet>
+      <link rel="icon" href={favicon} type="image/x-icon" />
       {/* Tags básicas */}
       <title>{title}</title>
       <meta name="description" content={description} />
